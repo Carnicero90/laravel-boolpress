@@ -1,0 +1,24 @@
+header {
+    a {
+        color: inherit;
+    }
+    .cats {
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        margin-bottom: 3px;
+        li {
+            border-right: 1px solid whitesmoke;
+            &:hover, &.active {
+                background-color: crimson;
+            }
+        }
+        &.adm {
+            background-color: crimson;
+            li:hover, li.active {
+                background-color: $brand-c-2;
+            }
+        }
+    }
+}

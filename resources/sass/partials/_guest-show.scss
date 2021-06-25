@@ -1,0 +1,19 @@
+.post-show {
+    .date, .reserved {
+        font-size: .7em;
+        padding-left: .5em;
+        font-style: italic;
+    }
+    .category {
+        background-color: crimson;
+        color: white;
+        display: block;
+        padding-left: .5em;
+        font-weight: bold;
+        border-bottom: 1px solid lightgray;
+    }
+    .post-header {
+        margin-bottom: .3em;
+        border-bottom: .8em solid crimson
+    }
+}
