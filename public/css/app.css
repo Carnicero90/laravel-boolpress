@@ -79,6 +79,14 @@ header .cats.adm li.active {
   background-color: rgba(192, 192, 192, 0.945);
 }
 
+header .banner {
+  background-color: crimson;
+  color: white;
+  font-size: 1.1em;
+  padding: 0.9em;
+  font-weight: 600;
+}
+
 footer {
   background-color: #585656;
   color: white;

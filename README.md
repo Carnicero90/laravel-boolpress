@@ -1,2 +1,2 @@
-editato file .env
+
 

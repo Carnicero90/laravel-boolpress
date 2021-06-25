@@ -40,7 +40,7 @@
                                     Admin-Panel
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -77,8 +77,17 @@
                 <a href="{{ route('api.posts') }}" {{-- TODO: crea sottopagina per test richieste a proria API --}} class="nav-link">API answer</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.vue-test') }}" class="nav-link {{ Request::is('admin.test.vue') ? 'active' : '' }}">Vue test</a>
+                <a href="{{ route('admin.vue-test') }}"
+                    class="nav-link {{ Request::is('admin.test.vue') ? 'active' : '' }}">Vue test</a>
             </li>
         </ul>
     @endauth
+    @guest
+        <div class="banner text-center">
+            <div class="container">
+                <p> Sconto del 50% sugli abbonamenti a Boolpress, sensazionale!
+                </p>
+            </div>
+        </div>
+    @endguest
 </header>
