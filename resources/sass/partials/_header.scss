@@ -29,3 +29,36 @@ header {
         font-weight: 600;
     }
 }
+
+// TOTEST:
+.test {
+    position: relative;
+    height: 2em;
+    padding: .3em;
+    background-color: black;
+    width: 100%;
+    border-bottom: 2px solid $brand-c-1;
+    p {
+        position: absolute;
+        width: max-content;
+        display: inline-block;
+        color: white;
+        .time {
+            color: yellowgreen;
+        }
+        animation-name: rotate;
+        animation-timing-function: linear;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    };
+}
+
+@keyframes rotate {
+    0% {
+        right: -50%;
+    }
+
+100% {
+  right: 120%
+
+} }

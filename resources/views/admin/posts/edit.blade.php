@@ -40,8 +40,6 @@
                     <img :src="previewImage ? previewImage : '{{ $post->image }}'" alt="" class="preview">
                     <input type="text" class="form-control" id="image" name="image" v-model="previewImage"
                         value={{ $post->image }}>
-                    {{-- TODO: non credo si possa far funzionare in questo modo (Vue fisiologicamente sovrascrive il value),
-                            chiedi se esiste una qualche hackerata per ovviare la cosa --}}
                 </div>
                 {{-- <div class="form-group">
                     <label for="inHome">Posizione nella home</label>

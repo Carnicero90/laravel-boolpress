@@ -2104,12 +2104,17 @@ process.umask = function() { return 0; };
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     Axios = _require["default"];
 
+img = document.getElementById('image').value; // TOASK: chiedi conto di questa soluzione a prof/tutor
+
+console.log(img);
 var app = new Vue({
   el: '#edit',
   data: {
     previewImage: ''
   },
-  methods: {}
+  mounted: function mounted() {
+    this.previewImage = img;
+  }
 });
 
 /***/ }),

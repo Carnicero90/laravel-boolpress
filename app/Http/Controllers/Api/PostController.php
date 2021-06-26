@@ -11,7 +11,7 @@ class PostController extends Controller
 {   /**
     * Return a listing of the resource.
     *
-    * @return \Illuminate\Http\Response //TODO: chiedi per sto valore di ritorno
+    * @return \Illuminate\Http\Response //TOASK: chiedi per sto valore di ritorno
     */
     public function index()
     {

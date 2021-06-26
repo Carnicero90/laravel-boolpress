@@ -65,6 +65,9 @@
             </li>
         @endforeach
     </ul>
+    <div class="test">
+        <p><span class="time">21-12-21 21:00:</span> Ultime notizie: Ascoli retrocesso in serie D</p>
+    </div>
     @auth
         <ul class="nav cats adm bg-c-2">
             <li class="nav-item {{ Request::is('admin/posts/create') ? 'active' : '' }}">
