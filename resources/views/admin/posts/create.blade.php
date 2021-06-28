@@ -12,7 +12,7 @@
     @endif
     <div class="container">
         <!-- form#create -->
-        <form id="create" action="{{ route('admin.posts.store') }}" method="post">
+        <form id="create" action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <!-- title -->
@@ -63,7 +63,8 @@
             <!-- image -->
             <div class="form-group">
                 <label for="image">Immagine</label>
-                <input type="text" class="form-control" id="image" name="image" value="{{ old('image') }}">
+                {{-- <input type="text" class="form-control" id="image" name="image" value="{{ old('image') }}"> --}}
+                <input type="file" id="image-file" name="image-file">
             </div>
             <!-- END image -->
             <!-- tags -->

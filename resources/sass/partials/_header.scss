@@ -1,4 +1,8 @@
 header {
+    // .navbar-expand-md {
+    //     background: linear-gradient(0.25turn, $brand-c-1, #ebf8e1, #f69d3c);
+
+    // }
     a {
         color: inherit;
     }
@@ -34,10 +38,13 @@ header {
 .test {
     position: relative;
     height: 2em;
+    overflow-x: hidden;
     padding: .3em;
-    background-color: black;
+    background-color: rgb(83, 82, 82);
+    // background: linear-gradient(0.25turn, $brand-c-1, #ebf8e1, #f69d3c);
     width: 100%;
     border-bottom: 2px solid $brand-c-1;
+    user-select: none;
     p {
         position: absolute;
         width: max-content;

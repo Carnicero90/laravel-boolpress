@@ -20,7 +20,7 @@
             <h2 class="card-title shadow-sm">Sottotitolo: <br> {{ $post->subtitle ? $post->subtitle : 'vuoto' }}</h2>
             <h6 class="card-subtitle mb-2 text-muted">Autore: {{ $post->author }}</h6>
             <p>{{ $post->pub_date }}</p>
-            <img src="{{ $post->image }}" alt="">
+            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
 
             <p class="card-text">{{ $post->content }}</p>
             <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}" class="btn btn-success">Modifica</a>

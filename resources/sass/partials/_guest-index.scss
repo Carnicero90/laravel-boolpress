@@ -1,6 +1,7 @@
 .post-list {
     .post-header {
         position: absolute;
+        z-index: 100;
         border-radius: 5px;
         left: 0.6em;
         top: 0.6em;
@@ -11,6 +12,11 @@
     }
 }
 .post {
+    &:hover {
+        img {
+            // filter: grayscale(.8);
+        }
+    }
     background-color: #f8fafc;
     position: relative;
     max-width: 1200px;
@@ -30,16 +36,20 @@
             height: 350px;
             object-fit: cover;
             object-position: 50% 0;
+            // filter: grayscale(.5);
+           
         }
     }
     .post-content {
         padding: 0.3em;
+        // margin-left: 3em;
     }
     a {
         color: black;
 
         &:hover {
-            color: #726d6d;
+            // color: #726d6d;
+            color: white;
 
             text-decoration: none;
         }

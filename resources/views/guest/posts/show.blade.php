@@ -20,7 +20,7 @@
             <!-- END div.post-header -->
             <!-- div.post-banner -->
             <div class="post-banner">
-                <img src="{{ $post->image }}" alt="">
+                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="shadow-sm">
             </div>
             <!-- END div.post-banner -->
             <div class="container">

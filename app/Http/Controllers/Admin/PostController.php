@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -48,11 +49,16 @@ class PostController extends Controller
         // TODO: rendi unico slug
         $request->validate($this->paramsToValidate());
         $form_data = $request->all();
+        // dd($form_data['tags']);
         $post = new Post();
+        if (isset($form_data['image-file'])) {
+            $image_path = Storage::put('uploads', $form_data['image-file']);
+            $form_data['image'] = $image_path;
+        }
         $post->fill($form_data);
         $post->slug = Str::slug($post->title);
         $post->save();
-        if ($form_data['tags'] && is_array($form_data['tags'])) {
+        if (isset($form_data['tags']) && is_array($form_data['tags'])) {
 
             $post->tags()->sync($form_data['tags']);
         }
@@ -104,6 +110,10 @@ class PostController extends Controller
         if ($form_data['title'] != $post->title) {
             $form_data['slug'] = $this->createUniqueSlug3($form_data['title']);
         }
+        if (isset($form_data['image-file'])) {
+            $image_path = Storage::put('uploads', $form_data['image-file']);
+            $form_data['image'] = $image_path;
+        }
 
         if ($form_data['tags']) {
             $post->tags()->sync($form_data['tags']);
@@ -122,7 +132,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post_to_delete = Post::findOrFail($id);
+        $post_to_delete->delete();
+        return redirect()->route('admin.posts.index');
     }
 
     protected function paramsToValidate()
@@ -135,6 +147,7 @@ class PostController extends Controller
             'pub_date' => 'required',
             'categories_id' => 'integer|exists:categories,id',
             'tags' => 'exists:tags,id',
+            'image-file' => 'image',
             // 'slug' => 'required|unique|min:3|max:120',
             'inHome' => 'unique:posts'
         ];

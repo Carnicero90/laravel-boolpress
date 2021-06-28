@@ -11,7 +11,7 @@ class PostController extends Controller
 {   /**
     * Return a listing of the resource.
     *
-    * @return \Illuminate\Http\Response //TOASK: chiedi per sto valore di ritorno
+    * @return \Illuminate\Http\Response
     */
     public function index()
     {
@@ -23,7 +23,10 @@ class PostController extends Controller
             'posts' => $posts,
             'success' => true
         ];
-        return response()->json($res);
+        return [
+            'posts' => $posts,
+            'success' => true
+        ];
     }
     protected function visibleCols() {
         return [

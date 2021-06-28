@@ -20,7 +20,7 @@
     {{-- TODO: commenta --}}
     <div id="edit">
         <div class="container">
-            <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post">
+            <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -35,11 +35,19 @@
                     <label for="pub_date">Data di pubblicazione</label>
                     <input type="date" class="form-control" id="pub_date" name="pub_date" value={{ $post->pub_date }}>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="image">Immagine</label>
                     <img :src="previewImage ? previewImage : '{{ $post->image }}'" alt="" class="preview">
                     <input type="text" class="form-control" id="image" name="image" v-model="previewImage"
                         value={{ $post->image }}>
+                </div> --}}
+                <div class="form-group">
+                    <label for="image-file">Immagine</label>
+                    @if ($post->image)
+                        <p>Immagine attuale: <span>{{ $post->image }}</span></p>
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="">
+                    @endif
+                    <input type="file" id="image-file" name="image-file">
                 </div>
                 {{-- <div class="form-group">
                     <label for="inHome">Posizione nella home</label>
