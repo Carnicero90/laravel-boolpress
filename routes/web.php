@@ -13,19 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Public
+//Public
 Route::get('/', 'HomeController@index');
-// Public->Posts
+//Public->Posts
 Route::get('/posts', 'PostController@index')->name('home');
 Route::get('/posts/{slug}', 'PostController@show')->name('/post');
-// Public->Categories
+//Public->Categories
 Route::get('/categories/{slug}', 'CategoryController@show')->name('cat');
+
+//Mails
+Route::get('/mails/newsletter', 'MailController@newsletter');
 
 
 //Auth
 Auth::routes();
 
-// Admin
+//Admin
 Route::get('/home', 'HomeController@index');
 Route::prefix('admin')
     ->namespace('Admin')
