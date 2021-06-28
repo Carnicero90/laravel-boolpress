@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function newsletter() {
+    public function newsletter(Request $request) {
         // TOTEST
-        Mail::to('fmontani81@gmail.com')->send(new SendFakeNewsletter());
+        $form_data = $request->all();
+        Mail::to($form_data['user-email'])->send(new SendFakeNewsletter());
         return redirect('/posts');
     }
 }

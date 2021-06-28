@@ -87,8 +87,17 @@
     @endauth
     @guest
         <div class="banner text-center">
+            <form action="{{ route('newsletter') }}" method="get">
+                @csrf
+                @method('GET')
+                <input type="email" name="user-email" id="user-email" placeholder="mail@example.com">
+                <label for="user-email">Iscriviti alla nostra newsletter!</label>
+                <input type="checkbox" name="privacy" id="privacy">
+                <label for="privacy"><small>Ho preso visione e accetto cose a caso</small></label>
+            </form>
             <div class="container">
-                <p> Sconto del 50% sugli abbonamenti a Boolpress, sensazionale!
+                <p> 
+                    blabla
                 </p>
             </div>
         </div>

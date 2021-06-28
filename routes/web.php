@@ -22,7 +22,7 @@ Route::get('/posts/{slug}', 'PostController@show')->name('/post');
 Route::get('/categories/{slug}', 'CategoryController@show')->name('cat');
 
 //Mails
-Route::get('/mails/newsletter', 'MailController@newsletter');
+Route::get('/mails/newsletter', 'MailController@newsletter')->name('newsletter');
 
 
 //Auth
